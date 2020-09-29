@@ -1,13 +1,17 @@
 Package: MRCD
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Infer causal direction between two traits with correlation ratio methods.
+Version: 1.0.0
 Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    c(person(given = "Haoran",
+             family = "Xue",
+             role = c("aut", "cre"),
+             email = "xuexx268@umn.edu"),
+      person(given = "Wei",
+             family = "Pan",
+             role = c("aut")
+             )
+             )
+Description: Perform methods in "Inferring Causal Direction Between Two Traits in the Presence of Horizontal Pleiotropy with GWAS Summary Data" by Haoran Xue and Wei Pan.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -20,3 +24,6 @@ LinkingTo:
 Imports: 
     Rcpp,
     pracma
+Author: Haoran Xue [aut, cre],
+  Wei Pan [aut]
+Maintainer: Haoran Xue <xuexx268@umn.edu>
