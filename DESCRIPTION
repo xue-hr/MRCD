@@ -18,4 +18,5 @@ LinkingTo:
     RcppArmadillo,
     RcppEigen
 Imports: 
-    Rcpp
+    Rcpp,
+    pracma
