@@ -7,7 +7,7 @@
 #' "loci_bed" is the reference panel, n by p matrix, genotype of
 #' n individuals for p SNPs;
 #' sig_part is a data.frame for the summary statistics, p by 12,
-#' columns are "chr,pos,rsid,A1,A2,beta_T1,se_T1,N_T1,beta_T2,se_T2,N_T2,loci".
+#' columns are: chr, pos, rsid, A1, A2, beta_T1, se_T1, N_T1, beta_T2, se_T2, N_T2, loci.
 #' @param V_T1 asymptotic covariance matrix for correlations of p SNPs with T1,
 #' default is NULL.
 #' @param V_T2 asymptotic covariance matrix for correlations of p SNPs with T2,

@@ -11,7 +11,7 @@ CD_3_methods(pruned, num_iteration = 20)
 "loci_bed" is the reference panel, n by p matrix, genotype of
 n individuals for p SNPs;
 sig_part is a data.frame for the summary statistics, p by 12,
-columns are "chr,pos,rsid,A1,A2,beta_T1,se_T1,N_T1,beta_T2,se_T2,N_T2,loci".}
+columns are: chr, pos, rsid, A1, A2, beta_T1, se_T1, N_T1, beta_T2, se_T2, N_T2, loci.}
 
 \item{num_iteration}{number of iteration, default is 20.}
 }

@@ -7,7 +7,7 @@
 #' "loci_bed" is the reference panel, n by 1 matrix, genotype of
 #' n individuals for 1 SNP;
 #' sig_part is a data.frame for the summary statistics, 1 by 12,
-#' columns are "chr,pos,rsid,A1,A2,beta_T1,se_T1,N_T1,beta_T2,se_T2,N_T2,loci".
+#' columns are: chr, pos, rsid, A1, A2, beta_T1, se_T1, N_T1, beta_T2, se_T2, N_T2, loci.
 #'
 #' @return a list with two elements "T1toT2", "T2toT1".
 #' "T1toT2" is a vector of 2 elements: estimated K and se for
