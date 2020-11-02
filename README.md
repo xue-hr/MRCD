@@ -37,6 +37,37 @@ library(MRCD)
 ## basic example code
 ```
 
+The list **pruned** contains two objects: **loci\_bed** is the reference
+panel of 22 SNPs for 489 individuals, **sig\_part** is the summary
+statistics for LDL and CAD:
+
+``` r
+
+pruned$loci_bed[1:6,1:6]
+#>                 rs11206510 rs11591147 rs12740374 rs4245791 rs2351524 rs2282143
+#> HG00096:HG00096          0          0          2         0         0         0
+#> HG00097:HG00097          1          0          0         1         1         0
+#> HG00099:HG00099          1          0          0         1         0         0
+#> HG00101:HG00101          0          0          0         1         1         0
+#> HG00102:HG00102          0          0          0         1         0         0
+#> HG00103:HG00103          2          0          0         0         0         0
+head(pruned$sig_part)
+#>   chr       pos       rsid A1 A2   beta_LDL   se_LDL  N_LDL beta_CAD  se_CAD
+#> 1   1  55496039 rs11206510  C  T -0.0695200 0.003555 294565 -0.06272 0.01138
+#> 2   1  55505647 rs11591147  T  G -0.4752703 0.011494 265213 -0.22090 0.03500
+#> 3   1 109817590 rs12740374  T  G -0.1618858 0.003197 294565 -0.10990 0.01022
+#> 4   2  44074431  rs4245791  C  T  0.0721910 0.003093 270962  0.05444 0.00887
+#> 5   2 203880992  rs2351524  T  C -0.0239770 0.004204 295826  0.10227 0.01228
+#> 6   6 160557643  rs2282143  T  C  0.0582204 0.008825 247909  0.26186 0.03325
+#>    N_CAD loci
+#> 1 336860   34
+#> 2 268736   34
+#> 3 268733   67
+#> 4 268741  160
+#> 5 268745  253
+#> 6 243575  734
+```
+
 Apply 3 CD methods to 22 SNPs from 12 loci:
 
 ``` r
@@ -107,7 +138,8 @@ results$CD_GLS_result
 #> [1,] 23.96457
 ```
 
-Now apply 3 CD methods to 12 indpendent SNPs, each of them from a locus:
+Now apply 3 CD methods to 12 indpendent SNPs, each of them from a locus.
+We do not need reference panel for independent SNPs.
 
 ``` r
 set.seed(1)

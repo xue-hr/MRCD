@@ -44,6 +44,15 @@ library(MRCD)
 ## basic example code
 ```
 
+The list **pruned** contains two objects: **loci_bed** is the reference panel of 22 SNPs for 489 individuals, **sig_part** is the summary statistics for LDL and CAD:
+
+```{r}
+
+pruned$loci_bed[1:6,1:6]
+head(pruned$sig_part)
+
+```
+
 Apply 3 CD methods to 22 SNPs from 12 loci:
 
 ```{r}
@@ -69,7 +78,7 @@ Results of CD-GLS:
 results$CD_GLS_result
 ```
 
-Now apply 3 CD methods to 12 indpendent SNPs, each of them from a locus:
+Now apply 3 CD methods to 12 indpendent SNPs, each of them from a locus. We do not need reference panel for independent SNPs.
 
 ```{r}
 set.seed(1)
