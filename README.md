@@ -37,7 +37,7 @@ library(MRCD)
 ## basic example code
 ```
 
-Apply all 3 CD methods:
+Apply 3 CD methods to 22 SNPs from 12 loci:
 
 ``` r
 set.seed(1)
@@ -105,6 +105,77 @@ results$CD_GLS_result
 #> $Q_T2toT1
 #>          [,1]
 #> [1,] 23.96457
+```
+
+Now apply 3 CD methods to 12 indpendent SNPs, each of them from a locus:
+
+``` r
+set.seed(1)
+sig_part = pruned$sig_part[c(2,3,4,5,6,9,11,13,14,15,18,21),]
+independent_results = CD_3_methods_Independent(sig_part)
+```
+
+Results of CD-Ratio:
+
+``` r
+independent_results$CD_Ratio_result
+#> $T1toT2
+#>          K      se(K) 
+#> 0.19413572 0.01050562 
+#> 
+#> $T2toT1
+#>          K      se(K) 
+#> 0.72765268 0.06337732 
+#> 
+#> $Q_T1toT2
+#>          [,1]
+#> [1,] 184.0483
+#> 
+#> $Q_T2toT1
+#>          [,1]
+#> [1,] 393.7104
+```
+
+Results of CD-Egger:
+
+``` r
+independent_results$CD_Egger_result
+#> $T1toT2
+#>          b0           K      se(b0)       se(K) 
+#> 0.008331157 0.220582429 0.002173359 0.040930430 
+#> 
+#> $T2toT1
+#>          b0           K      se(b0)       se(K) 
+#> -0.02831589  3.21230872  0.00918193  0.59210624 
+#> 
+#> $Q_T1toT2
+#>          [,1]
+#> [1,] 11.93857
+#> 
+#> $Q_T2toT1
+#>          [,1]
+#> [1,] 11.99474
+```
+
+Results of CD-GLS:
+
+``` r
+independent_results$CD_GLS_result
+#> $T1toT2
+#>          b0           K      se(b0)       se(K) 
+#> 0.008162980 0.229319510 0.002289542 0.041957061 
+#> 
+#> $T2toT1
+#>           b0            K       se(b0)        se(K) 
+#> -0.028377515  3.005738170  0.008756814  0.521305169 
+#> 
+#> $Q_T1toT2
+#>          [,1]
+#> [1,] 12.12634
+#> 
+#> $Q_T2toT1
+#>          [,1]
+#> [1,] 12.84648
 ```
 
 <!-- What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:

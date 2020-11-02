@@ -44,7 +44,7 @@ library(MRCD)
 ## basic example code
 ```
 
-Apply all 3 CD methods:
+Apply 3 CD methods to 22 SNPs from 12 loci:
 
 ```{r}
 set.seed(1)
@@ -68,6 +68,33 @@ Results of CD-GLS:
 ```{r}
 results$CD_GLS_result
 ```
+
+Now apply 3 CD methods to 12 indpendent SNPs, each of them from a locus:
+
+```{r}
+set.seed(1)
+sig_part = pruned$sig_part[c(2,3,4,5,6,9,11,13,14,15,18,21),]
+independent_results = CD_3_methods_Independent(sig_part)
+```
+
+Results of CD-Ratio:
+
+```{r}
+independent_results$CD_Ratio_result
+```
+
+Results of CD-Egger:
+
+```{r}
+independent_results$CD_Egger_result
+```
+
+Results of CD-GLS:
+
+```{r}
+independent_results$CD_GLS_result
+```
+
 <!-- What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
 ```{r cars}
